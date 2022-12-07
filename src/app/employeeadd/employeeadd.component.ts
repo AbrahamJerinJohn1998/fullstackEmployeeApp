@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-employeeadd',
@@ -13,6 +14,7 @@ PhoneNo=""
 email=""
 cname=""
 yearOfExpereince=""
+constructor(private api:ApiService){}
 readValues=()=>
 {
  let data:any={
@@ -25,6 +27,24 @@ readValues=()=>
   "yearOfExpereince":this.yearOfExpereince
     } 
     console.log(data)
+    this.api.addEmployee(data).subscribe(
+  
+      (response:any)=>{
+        console.log(response)
+        if (response.status=="success") {
+          alert("Course added successfully")
+          this.name=""
+          this.designation=""
+          this.salary=""
+          this.PhoneNo=""
+          this.email=""
+          this.cname=""
+        } else {
+          alert("Something went wrong")
+        }
+      }
+    
+  )
 }
 
 
