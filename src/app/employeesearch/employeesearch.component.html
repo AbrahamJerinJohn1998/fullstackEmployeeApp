@@ -5,38 +5,44 @@
             <div class="row g-3">
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Employee Code</label>
-                    <input name="code" [(ngModel)]="code" type="text" class="form-control">
+                    <input type="text" name="code" [(ngModel)]="code" class="form-control">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <button  (click)="readValues()" class="btn btn-success">Search</button>
+                </div>
+                </div>
+                <div class="row" *ngFor="let i of searchData">
+                    <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Employee Id</label>
+                    <input type="text" class="form-control" value="{{i.id}}">
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Employee Name</label>
-                    <input name="name" [(ngModel)]="name" type="text" class="form-control">
+                    <input type="text" class="form-control" value="{{i.name}}">
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Designation</label>
-                    <input name="designation" [(ngModel)]="designation" type="text" class="form-control">
+                    <input type="text" class="form-control" value="{{i.designation}}">
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Salary</label>
-                    <input name="salary" [(ngModel)]="salary" type="text" class="form-control">
+                    <input type="text" class="form-control" value="{{i.salary}}">
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Phone No</label>
-                    <input name="phoneNo" [(ngModel)]="phoneNo" type="text" class="form-control">
+                    <input type="text" class="form-control" value="{{i.phoneNo}}">
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Email Id</label>
-                    <input name="email" [(ngModel)]="email" type="email" name="" id="" class="form-control">
+                    <input type="text" class="form-control" value="{{i.email}}">
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Company Name</label>
-                    <input name="cname" [(ngModel)]="cname" type="text" class="form-control">
+                    <input type="text" class="form-control" value="{{i.cname}}">
                 </div>
                 <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label for="" class="form-label">Year of Experience</label>
-                    <input name="yearOfExpereince" [(ngModel)]="yearOfExpereince" type="text" class="form-control">
-                </div>
-                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <button (click)="readValues()" class="btn btn-success">Submit</button>
+                    <input type="text" class="form-control" value="{{i.yearOfExpereince}}">
                 </div>
             </div>
         </div>

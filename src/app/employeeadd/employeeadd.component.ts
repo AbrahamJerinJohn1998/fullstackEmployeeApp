@@ -10,18 +10,20 @@ export class EmployeeaddComponent {
   name=""
 designation=""
 salary=""
-PhoneNo=""
+phoneNo=""
 email=""
 cname=""
+code=""
 yearOfExpereince=""
 constructor(private api:ApiService){}
 readValues=()=>
 {
  let data:any={
+  "code":this.code,
   "name":this.name,
   "designation":this.designation,
   "salary":this.salary,
-  "PhoneNo":this.PhoneNo,
+  "phoneNo":this.phoneNo,
   "email":this.email,
   "cname":this.cname,
   "yearOfExpereince":this.yearOfExpereince
@@ -32,11 +34,12 @@ readValues=()=>
       (response:any)=>{
         console.log(response)
         if (response.status=="success") {
-          alert("Course added successfully")
+          alert("Employee added successfully")
+          this.code=""
           this.name=""
           this.designation=""
           this.salary=""
-          this.PhoneNo=""
+          this.phoneNo=""
           this.email=""
           this.cname=""
         } else {
